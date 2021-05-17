@@ -1,0 +1,17 @@
+[tool.poetry]
+name = "repl_python3_Minecraft-Status-Bot"
+version = "0.1.0"
+description = ""
+authors = ["Your Name <you@example.com>"]
+
+[tool.poetry.dependencies]
+python = "^3.8"
+mcstatus = "^5.1.4"
+flask = "^1.1.2"
+"discord.py" = "^1.7.1"
+
+[tool.poetry.dev-dependencies]
+
+[build-system]
+requires = ["poetry>=0.12"]
+build-backend = "poetry.masonry.api"
