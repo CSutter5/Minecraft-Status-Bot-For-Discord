@@ -88,6 +88,11 @@ class MinecraftBot(commands.Bot):
             except:
                 pass
 
+        # ?source
+        @self.command(name="source", help="Gives Link to Source Code", brief="Gives Link to Source Code.")
+        async def source(message):
+            await message.channel.send("https://github.com/PizzaRules668/Minecraft-Status-Bot-For-Discord")
+
     def registerEvents(self):
         @self.event
         async def on_message(message):
