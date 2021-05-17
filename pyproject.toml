@@ -2,12 +2,11 @@
 name = "repl_python3_Minecraft-Status-Bot"
 version = "0.1.0"
 description = ""
-authors = ["Your Name <you@example.com>"]
+authors = ["Pizzarules668 Pizzarules668@gmail.com"]
 
 [tool.poetry.dependencies]
 python = "^3.8"
 mcstatus = "^5.1.4"
-flask = "^1.1.2"
 "discord.py" = "^1.7.1"
 
 [tool.poetry.dev-dependencies]

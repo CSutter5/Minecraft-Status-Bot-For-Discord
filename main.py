@@ -11,7 +11,9 @@ class MinecraftBot(commands.Bot):
         self.ip = os.getenv("ip")
         self.server = MinecraftServer.lookup(self.ip)
 
-        self.banned = ["https://tenor.com/view/fortnite-batman-dancing-dance-orange-justice-gif-16354903", "https://tenor.com/view/music-mood-beat-dance-turnip-the-beet-gif-12844742"]
+        self.banned = [
+            "https://tenor.com/view/fortnite-batman-dancing-dance-orange-justice-gif-16354903"
+            ]
 
         self.role = [["<@&837850925656834051>", "As a test role", "\N{EGG}"]]
 
@@ -23,15 +25,16 @@ class MinecraftBot(commands.Bot):
 
         #                                  Channel Id of Self Role 
         selfRoleChannel = self.get_channel(837850727656718357)
-
-
         #                                                     Message Id of Self Role 
-        selfRoleMessage = await selfRoleChannel.fetch_message(840958907681472522) 
+        selfRoleMessage = await selfRoleChannel.fetch_message(840958907681472522)
         
         for _, _, emoji in self.role:
+            await selfRoleMessage.clear_reaction(emoji)
             await selfRoleMessage.add_reaction(emoji)
         
-        await self.wait_for('reaction_add', check=self.autoRole)
+        await self.change_presence(activity=discord.Game(name="Minecraft"), status=discord.Status.idle)
+
+        #await self.wait_for('reaction_add', check=self.autoRole)
 
     def registerCommands(self):
         # ?status
@@ -111,12 +114,18 @@ class MinecraftBot(commands.Bot):
                         if ".gif" in attachement.filename.lower():
                             print("Gif")'''
 
+        @self.event
+        async def on_reaction_add(self, user):
+            print(user)
+            #print(len(args))
+            #print(args)
 
-    async def autoRole(self, *args):
-        print("test")
-        # Check to make sure its not a bot
-        # Add user to that role
-        pass
+
+    #async def autoRole(self, message, user):
+    #    print("test")
+    #    # Check to make sure its not a bot
+    #    # Add user to that role
+    #    pass
 
 if __name__ == "__main__":
     bot = MinecraftBot(command_prefix="?")
