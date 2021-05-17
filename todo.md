@@ -1,26 +1,26 @@
 Want to do
-    - Commands
-        x ?status
+    - [X] Commands
+        - [X] ?status
             - Give the status of the server
-                x Online or offline
-                x Ping
-                x Number of player online
-                x Minecraft Version
+                - [X] Online or offline
+                - [X] Ping
+                - [X] Number of player online
+                - [X] Minecraft Version
 
-        x ?online
-            X Give Number of Users online
-            - And Names
+        - [X] ?online
+            - [X] Give Number of Users online
+            - [ ] And Names
                 - mcstatus.players.names does not work
 
-        - ?invite
+        - [ ] ?invite
             - Maybe
 
-        x ?help
+        - [X] ?help
 
 
-    x Auto Mod
-        - Auto Roles
-        x Add banned messages / gifs
+    - [X] Auto Mod
+        - [ ] Auto Roles
+        - [X] Auto banned messages / gifs
 
-    - Ping @mcstatus when server goes down
+    - [ ] Ping @mcstatus when server goes down
         - Maybe use threading

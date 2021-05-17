@@ -8,8 +8,8 @@ class MinecraftBot(commands.Bot):
     def __init__(self, command_prefix, self_bot=False):
         commands.Bot.__init__(self, command_prefix=command_prefix, self_bot=self_bot)
 
-        self.server = MinecraftServer.lookup(os.getenv("ip"))
-        self.ip = self.server.host + ":" + str(self.server.port)
+        self.ip = os.getenv("ip")
+        self.server = MinecraftServer.lookup(self.ip)
 
         self.banned = ["https://tenor.com/view/fortnite-batman-dancing-dance-orange-justice-gif-16354903", "https://tenor.com/view/music-mood-beat-dance-turnip-the-beet-gif-12844742"]
 
@@ -97,7 +97,7 @@ class MinecraftBot(commands.Bot):
         @self.event
         async def on_message(message):
             await self.process_commands(message)
-            print(dir(message))
+            #print(dir(message))
         
             for ban in self.banned:
                 if (ban.lower() in message.content.lower()): 
